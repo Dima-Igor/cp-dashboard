@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block head %}
+<title>CP Dashboard</title>
+{% endblock %} {% block body %}
+<div class="content">
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Handle</th>
+                <th>Problem</th>
+                <th>Verdict</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for submission in submissions %}
+            <tr>
+                <td>{{submission.handle}}</td>
+                <td>
+                    <a href="https://{{submission.problem}}">{{submission.problem}}</a>
+                </td>
+                <td>{{submission.verdict}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="buttons">
+        <form action="/statistics" method="post">
+            <input type="submit" value="Get statistics" class="stats-button">
+        </form>
+        <form action="/update" method="post">
+            <input type="submit" value="update" class="stats-button">
+        </form>
+    </div>
+</div>
+
+{% endblock %}
