@@ -1,0 +1,8 @@
+{
+    "server_type": "rabbitmq",
+    "host": "192.168.1.5",
+    "port": "11000",
+    "user": "dimas",
+    "password": "dimas", 
+    "task_queue": "input_trrp4" 
+}
